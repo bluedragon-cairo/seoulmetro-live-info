@@ -20,7 +20,7 @@ function fetchData(set, callback) {
 		url: 'https://tabriz.kr/api/search_api.php?company=S&trainNumber=&setNumber=' + set + '&date_start=' + sDate + '&date_end=' + sDate + '&page=1&sort=1',
 		onload: function onload(res) {
 			var data = JSON.parse(res.responseText);
-      with(data) {
+			with(data) {
 				if(status_code == 1) for(var i=0; i<totalNum; i++)
 					(info[i].setNumber >= 111 ? rheostatic : vvvf).push(info[i].trainNumber);
 				fetchData(set + 1, callback);
